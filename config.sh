@@ -21,7 +21,7 @@ function pre_build {
         brew update
         brew install gcc fftw
     else
-        export CC=gcc -fPIC
+        export CC="gcc -fPIC"
         build_openblas_gfortran
         build_fftw
     fi
