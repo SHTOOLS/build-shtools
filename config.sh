@@ -1,10 +1,19 @@
 # Define custom utilities
 # Test for OSX with [ -n "$IS_OSX" ]
 
-source spinner.sh
+# OpenBLAS version for systems that use it.
+OPENBLAS_VERSION=0.2.18
+
+source gfortran-install/gfortran_utils.sh
 
 function build_fftw {
     build_simple fftw 3.3.6-pl2 http://www.fftw.org
+}
+
+function build_openblas_gfortran {
+    local plat=${1:-$PLAT}
+    local tar_path=$(abspath $(get_gf_lib "openblas-${OPENBLAS_VERSION}" "$plat"))
+    (cd / && tar zxf $tar_path)
 }
 
 function pre_build {
@@ -12,12 +21,8 @@ function pre_build {
         brew update
         brew install gcc fftw
     else
-        start_spinner "Installing OpenBLAS"
-        build_openblas >/dev/null 2>&1
-        stop_spinner
-        start_spinner "Installing FFTW"
-        build_fftw >/dev/null 2>&1
-        stop_spinner
+        build_openblas_gfortran
+        build_fftw
     fi
 }
 
