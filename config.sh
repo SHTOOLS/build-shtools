@@ -21,7 +21,8 @@ function pre_build {
     cp ./posix_setup.py SHTOOLS/setup.py
     if [ -n "$IS_OSX" ]; then
         brew update
-        brew install gcc fftw
+        brew install gcc
+        brew install fftw --with-fortran
     else
         export CC="gcc -fPIC"
         build_openblas_gfortran
