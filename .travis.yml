@@ -17,6 +17,10 @@ env:
         # Commit when running from daily branch
         - DAILY_COMMIT=master
 
+branches:
+  only:
+  - master
+
 language: python
 # Default Python version is usually 2.7
 python: 3.5
