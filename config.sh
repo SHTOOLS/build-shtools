@@ -1,7 +1,7 @@
 # Define custom utilities
 # Test for OSX with [ -n "$IS_OSX" ]
 
-source gfortran-install/gfortran_utils.sh
+source spinner.sh
 
 function build_fftw {
     build_simple fftw 3.3.6-pl2 http://www.fftw.org
@@ -9,11 +9,14 @@ function build_fftw {
 
 function pre_build {
     if [ -n "$IS_OSX" ]; then
-        install_gfortran
+        brew update
+        brew install gcc fftw
+    else
+        start_spinner "Installing OpenBLAS"
+        stop_spinner $(build_openblas >/dev/null 2>&1)
+        start_spinner "Installing FFTW"
+        stop_spinner $(build_fftw >/dev/null 2>&1)
     fi
-
-    build_openblas
-    build_fftw    
 }
 
 function run_tests {
