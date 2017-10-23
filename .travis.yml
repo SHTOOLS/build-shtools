@@ -1,6 +1,6 @@
 env:
     global:
-        - REPO_DIR=scipy
+        - REPO_DIR=SHTOOLS
         # Also see DAILY_COMMIT below
         - BUILD_COMMIT=9bcaf3f6c5b9e936d6ed95bd6e189f40e89f8898
         - PLAT=x86_64
