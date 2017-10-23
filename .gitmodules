@@ -11,3 +11,6 @@
 	path = numpy-distutils
 	url = https://github.com/numpy/numpy.git
 	branch = master
+[submodule "SHTOOLS"]
+	path = SHTOOLS
+	url = https://github.com/SHTOOLS/SHTOOLS.git
