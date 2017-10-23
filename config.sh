@@ -13,9 +13,11 @@ function pre_build {
         brew install gcc fftw
     else
         start_spinner "Installing OpenBLAS"
-        stop_spinner $(build_openblas >/dev/null 2>&1)
+        build_openblas >/dev/null 2>&1
+        stop_spinner
         start_spinner "Installing FFTW"
-        stop_spinner $(build_fftw >/dev/null 2>&1)
+        build_fftw >/dev/null 2>&1
+        stop_spinner
     fi
 }
 
