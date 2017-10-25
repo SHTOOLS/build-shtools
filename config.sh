@@ -17,11 +17,11 @@ function build_openblas_gfortran {
 }
 
 function pre_build {
-    rm -f SHTOOLS/setup.py
-    cp ./posix_setup.py SHTOOLS/setup.py
     if [ -n "$IS_OSX" ]; then
         :
     else
+        rm -f SHTOOLS/setup.py
+        cp ./posix_setup.py SHTOOLS/setup.py
         export CC="gcc -fPIC"
         build_openblas_gfortran
         build_fftw
