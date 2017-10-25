@@ -81,6 +81,10 @@ matrix:
         - NP_TEST_DEP=numpy==1.11.3
 
 before_install:
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update                                     ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install gcc                                ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then travis_wait 30 brew install openblas            ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then travis_wait 30 brew install fftw --with-fortran ; fi
     - if [ "$TRAVIS_BRANCH" == "daily" ]; then
           CONTAINER="pre-release";
           BUILD_COMMIT=${DAILY_COMMIT:-$BUILD_COMMIT};
