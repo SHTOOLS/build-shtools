@@ -6,7 +6,7 @@ clone_depth: 50
 max_jobs: 100
 
 cache:
-  - '%LOCALAPPDATA%\pip\Cache'
+  - '%LOCALAPPDATA%\pip\Cache' 
 
 environment:
   global:
