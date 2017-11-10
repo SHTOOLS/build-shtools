@@ -54,6 +54,9 @@ install:
   - cmd: conda config --add channels conda-forge
   - cmd: conda install --yes flang mkl
   
+  # Install fftw3
+  - vcpkg install fftw3:x64-windows
+  
   # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
   # the parent CMD process).
@@ -69,9 +72,6 @@ install:
   
   # Upgrade to the latest pip.
   - 'python -m pip install -U pip setuptools wheel'
-
-  # Install the scipy test dependencies.
-  - 'pip install -U --timeout 5 --retries 2 -r tools/ci/appveyor/requirements.txt'
 
   # Replace numpy distutils with a version that can build with msvc + mingw-gfortran
   - ps: |
