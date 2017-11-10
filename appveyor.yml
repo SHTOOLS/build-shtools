@@ -129,14 +129,16 @@ before_test:
   - python -m pip install pytest pytest-xdist pytest-faulthandler pytest-env Pillow mpmath matplotlib
 
   # Upgrade numpy to the version used for testing
-  - python -m pip install "%NUMPY_TEST_DEP%"
+
 
 test_script:
-  - cd ..
-  - mkdir tmp_test
-  - cd tmp_test
-  - python ..\check_license.py
-  - python ..\run_scipy_tests.py %TEST_MODE% -- -n6 --junitxml=%cd%\junit-results.xml -rfEX
+  - python examples/notebooks/test_notebooks.py
+
+
+
+
+
+
 
 after_test:
   # Upload test results to Appveyor
