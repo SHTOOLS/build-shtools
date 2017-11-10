@@ -24,3 +24,8 @@ void dfftw_plan_dft_1d_(fftw_plan* plan, int* n, fftw_complex *in, fftw_complex 
     return;
 }
 
+void dfftw_plan_dft_c2r_1d_(fftw_plan* plan, int* n, fftw_complex *in, double *out, unsigned* flags) {
+
+    *plan = fftw_plan_dft_c2r_1d(*n, in, out, *flags);
+    return;
+}
