@@ -248,7 +248,8 @@ def configuration(parent_package='', top_path=None):
     kwargs['library_dirs'].extend([libdir])
     config.add_extension('pyshtools._SHTOOLS',
                          sources=['src/pyshtools.pyf',
-                                  'src/PythonWrapper.f95'],
+                                  'src/PythonWrapper.f95',
+                                  'alias.c'],
                          **kwargs)
 
     # constants
