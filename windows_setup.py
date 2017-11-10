@@ -243,8 +243,6 @@ def configuration(parent_package='', top_path=None):
 
     if sys.platform != 'win32':
         kwargs['libraries'].extend(['m'])
-    else:
-        kwargs['libraries'].append('fftwf')
 
     # SHTOOLS
     kwargs['libraries'].extend(['SHTOOLS'])
