@@ -240,7 +240,7 @@ def configuration(parent_package='', top_path=None):
     dict_append(kwargs, **fftw_info)
 
     # SHTOOLS
-    kwargs['libraries'].extend(['SHTOOLS', 'fftw3', 'm'])
+    kwargs['libraries'].extend(['SHTOOLS'])
     kwargs['include_dirs'].extend([libdir])
     kwargs['library_dirs'].extend([libdir])
     config.add_extension('pyshtools._SHTOOLS',
