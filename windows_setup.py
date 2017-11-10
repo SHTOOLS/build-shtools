@@ -234,7 +234,11 @@ def configuration(parent_package='', top_path=None):
     blas_info = get_info('blas_opt')
     dict_append(kwargs, **blas_info)
     dict_append(kwargs, **lapack_info)
-  
+
+    # FFTW info
+    fftw_info = get_info('fftw_info')
+    dict_append(kwargs, **fftw_info)
+
     # SHTOOLS
     kwargs['libraries'].extend(['SHTOOLS', 'fftw3', 'm'])
     kwargs['include_dirs'].extend([libdir])
