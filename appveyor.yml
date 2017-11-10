@@ -75,6 +75,10 @@ install:
   
   # Install the released numpy
   - pip install numpy
+  
+  - ps: |
+      ls -r C:\Tools\vcpkg | Out-File listing.txt
+      Push-AppveyorArtifact .\listing.txt
 
   # Replace numpy distutils with a version that can build with msvc + mingw-gfortran
   - ps: |
@@ -87,7 +91,8 @@ install:
       mv $tmpdir\numpy\distutils $NumpyDir
 
 build_script:
-  - cd shtools
+  - ps: cd SHTOOLS
+  - ps: ls .
 
   # Build wheel using setup.py
   - ps: |
