@@ -68,9 +68,6 @@ install:
   # Install fftw3
   - vcpkg install fftw3:x64-windows
   
-  # Copy the fftw3.f to the source directory
-  - ps: cp "C:\Tools\vcpkg\buildtrees\fftw3\src\fftw-3.3.6-pl2\api\fftw3.f" ".\SHTOOLS\src\fftw3.f"
-
   # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
   # the parent CMD process).
