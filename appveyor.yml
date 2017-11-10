@@ -50,7 +50,7 @@ install:
   - git submodule update --init --recursive
   
   # Copy windows_setup
-  - ps:
+  - ps: |
       rm -Force .\SHTOOLS\setup.py
       cp .\windows_setup.py .\SHTOOLS\setup.py
 
