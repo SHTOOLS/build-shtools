@@ -51,8 +51,8 @@ install:
   
   # Copy windows_setup
   - ps:
-      rm -Force SHTOOLS\setup.py
-      cp .\windows_setup.py SHTOOLS\setup.py
+      rm -Force .\SHTOOLS\setup.py
+      cp .\windows_setup.py .\SHTOOLS\setup.py
 
   # Add path, activate `conda` and update conda.
   - cmd: call %CONDA_INSTALL_LOCN%\Scripts\activate.bat
