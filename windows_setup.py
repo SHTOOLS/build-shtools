@@ -214,6 +214,8 @@ def configuration(parent_package='', top_path=None):
     exclude_sources = ['PlanetsConstants.f95', 'PythonWrapper.f95']
     sources = [os.path.join('src', file) for file in files if
                file.lower().endswith('.f95') and file not in exclude_sources]
+    sources = [os.path.join('src', file) for file in files if
+               file.lower().endswith('.f') and file not in exclude_sources]
 
     # (from http://stackoverflow.com/questions/14320220/
     #              testing-python-c-libraries-get-build-path)):
