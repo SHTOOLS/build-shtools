@@ -46,6 +46,9 @@ init:
           Exit-AppveyorBuild
       }
 install:
+  # Get needed submodules
+  - git submodule update --init --recursive
+
   # Add path, activate `conda` and update conda.
   - cmd: call %CONDA_INSTALL_LOCN%\Scripts\activate.bat
   - cmd: conda update --yes --quiet conda
