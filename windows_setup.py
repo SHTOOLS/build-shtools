@@ -236,7 +236,7 @@ def configuration(parent_package='', top_path=None):
     dict_append(kwargs, **lapack_info)
 
     # FFTW info
-    fftw_info = get_info('fftw_info')
+    fftw_info = get_info('fftw')
     dict_append(kwargs, **fftw_info)
 
     # SHTOOLS
