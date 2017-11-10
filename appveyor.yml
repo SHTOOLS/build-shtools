@@ -7,8 +7,8 @@ max_jobs: 100
 
 cache:
   - '%LOCALAPPDATA%\pip\Cache'
-  #- 'C:\Tools\vcpkg\installed'
-  #- 'C:\Tools\vcpkg\packages'
+  - 'C:\Tools\vcpkg\installed'
+  - 'C:\Tools\vcpkg\packages'
   #- 'C:\Tools\vcpkg\buildtrees'
 
 environment: 
