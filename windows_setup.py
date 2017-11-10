@@ -239,6 +239,9 @@ def configuration(parent_package='', top_path=None):
     fftw_info = get_info('fftw')
     dict_append(kwargs, **fftw_info)
 
+    if sys.platform != 'win32':
+        kwargs['libraries'].extend(['m'])
+
     # SHTOOLS
     kwargs['libraries'].extend(['SHTOOLS'])
     kwargs['include_dirs'].extend([libdir])
