@@ -4,9 +4,8 @@ env:
         # Also see DAILY_COMMIT below
         - BUILD_COMMIT=9bcaf3f6c5b9e936d6ed95bd6e189f40e89f8898
         - PLAT=x86_64
-        - NP_BUILD_DEP="numpy==1.8.2"
-        - CYTHON_BUILD_DEP="Cython==0.26.1"
-        - NP_TEST_DEP="numpy==1.8.2"
+        - NP_BUILD_DEP="numpy"
+        - CYTHON_BUILD_DEP="Cython"
         - UNICODE_WIDTH=32
         - MANYLINUX_URL="https://5cf40426d9f06eb7461d-6fe47d9331aba7cd62fc36c7196769e4.ssl.cf2.rackcdn.com"
         - WHEELHOUSE_UPLOADER_USERNAME=travis-worker
@@ -43,18 +42,12 @@ matrix:
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.4
-        # Python 3.4 needs more recent numpy (for testing only)
-        - NP_TEST_DEP=numpy==1.9.3
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.5
-        - NP_BUILD_DEP=numpy==1.9.3
-        - NP_TEST_DEP=numpy==1.9.3
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.6
-        - NP_BUILD_DEP=numpy==1.11.3
-        - NP_TEST_DEP=numpy==1.11.3
     - os: osx
       language: generic
       env:
@@ -63,7 +56,6 @@ matrix:
       language: generic
       env:
         - MB_PYTHON_VERSION=3.4
-        - NP_TEST_DEP=numpy==1.9.3
     - os: osx
       language: generic
       env:
@@ -71,14 +63,10 @@ matrix:
         # OSX build of scipy on Python 3.5 needs built 1.8.2 wheel to avoid
         # https://github.com/numpy/numpy/issues/6204.  numpy 1.8.2 wheel for
         # Python 3.5 at nipy manylinux URL.
-        - NP_BUILD_DEP=numpy==1.8.2
-        - NP_TEST_DEP=numpy==1.9.3
     - os: osx
       language: generic
       env:
         - MB_PYTHON_VERSION=3.6
-        - NP_BUILD_DEP=numpy==1.11.3
-        - NP_TEST_DEP=numpy==1.11.3
 
 before_install:
     - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update                                     ; fi
