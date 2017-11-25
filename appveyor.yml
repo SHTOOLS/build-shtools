@@ -183,4 +183,7 @@ on_success:
     %CONTAINER%
 
 on_finish:
-  - ps: Push-AppveyorArtifact "$env:APPVEYOR_BUILD_FOLDER\build.pml"
+  - ps: cd $env:APPVEYOR_BUILD_FOLDER
+  - ps: ls .
+  - ps: cp build.pml upload.pml
+  - ps: Push-AppveyorArtifact .\upload.pml
