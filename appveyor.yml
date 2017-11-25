@@ -105,9 +105,11 @@ build_script:
   - ps: cd SHTOOLS
 
   # Copy dependent DLLs
+  - ps: md -Force .\build\lib.win-amd64-3.6\pyshtools
   - ps: cp "C:\Tools\vcpkg\installed\x64-windows\bin\*.dll" ".\build\lib.win-amd64-3.6\pyshtools"
   - ps: cp "$env:CONDA_INSTALL_LOCN\Library\bin\*.dll" ".\build\lib.win-amd64-3.6\pyshtools"
 
+  - ps: md -Force .\build\lib.win-amd64-3.5\pyshtools
   - ps: cp "C:\Tools\vcpkg\installed\x64-windows\bin\*.dll" ".\build\lib.win-amd64-3.5\pyshtools"
   - ps: cp "$env:CONDA_INSTALL_LOCN\Library\bin\*.dll" ".\build\lib.win-amd64-3.5\pyshtools"
 
