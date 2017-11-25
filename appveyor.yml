@@ -53,14 +53,11 @@ install:
   # Get needed submodules
   - git submodule update --init --recursive
   
-  # Update vcpkg to patch
+  # Update vcpkg
   - ps: |
-      git clone -q --branch=fftw-cmake https://github.com/xoviat/vcpkg.git
-      cd vcpkg
-      rm -r -Force C:\Tools\vcpkg\ports
-      cp -r ports C:\Tools\vcpkg
-      cd ..
-      rm -r -Force vcpkg
+      cd C:\Tools\vcpkg
+      git pull -q
+      cd $env:APPVEYOR_BUILD_FOLDER
 
   # Add path, activate `conda` and update conda.
   - cmd: call %CONDA_INSTALL_LOCN%\Scripts\activate.bat
