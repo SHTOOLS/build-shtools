@@ -184,6 +184,6 @@ on_success:
 
 on_finish:
   - ps: cd $env:APPVEYOR_BUILD_FOLDER
-  - ps: ls .
   - ps: Stop-Process -processname procmon
+  - ps: Start-Sleep -s 10
   - ps: Push-AppveyorArtifact .\build.pml
