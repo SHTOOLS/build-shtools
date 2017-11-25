@@ -185,5 +185,5 @@ on_success:
 on_finish:
   - ps: cd $env:APPVEYOR_BUILD_FOLDER
   - ps: ls .
-  - ps: cp build.pml upload.pml
-  - ps: Push-AppveyorArtifact .\upload.pml
+  - ps: Stop-Process -processname procmon
+  - ps: Push-AppveyorArtifact .\build.pml
