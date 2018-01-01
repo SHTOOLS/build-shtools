@@ -16,12 +16,9 @@ cache:
 
 environment: 
   global:
-      NUMPY_HEAD: https://github.com/xoviat/numpy.git
-      NUMPY_BRANCH: flang-combined
       APPVEYOR_SAVE_CACHE_ON_ERROR: true
       APPVEYOR_SKIP_FINALIZE_ON_EXIT: true
       CONDA_INSTALL_LOCN: C:\\Miniconda36-x64
-      NPY_NUM_BUILD_JOBS: 4
       PYPI_PASSWORD:
           secure: iNYkwpBDR7Tpb075Zq2hjw==
 
