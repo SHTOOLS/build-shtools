@@ -53,9 +53,8 @@ install:
   # Get needed submodules
   - git submodule update --init --recursive
 
-  # Add path, activate `conda` and update conda.
+  # Add path and activate `conda`.
   - cmd: call %CONDA_INSTALL_LOCN%\Scripts\activate.bat
-  - cmd: conda update --yes --quiet conda
   
   # Add our channels.
   - cmd: conda config --add channels defaults
@@ -63,7 +62,7 @@ install:
 
   # Install the required packages
   - cmd: conda install --yes flang openblas fftw
-  
+
   # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
   # the parent CMD process).
