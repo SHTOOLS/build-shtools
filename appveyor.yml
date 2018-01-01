@@ -81,6 +81,7 @@ install:
   
   # Install a version of NumPy that has the required version of distutils
   # FIXME: Change this to "pip install numpy" when 1.15 is released
+  - pip install cython
   - pip install git+https://github.com/numpy/numpy.git@7255987a11c8b90ff525ad178419b22508164e23
 
 build_script:
